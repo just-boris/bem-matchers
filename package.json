@@ -29,11 +29,15 @@
     "enb-stylus": "1.1.2",
     "karma": "^0.12.24",
     "karma-cli": "0.0.4",
+    "karma-jasmine": "^0.2.2",
+    "karma-phantomjs-launcher": "^0.1.4",
     "stylus": "^0.47.1",
     "ym": "^0.1.0"
   },
   "scripts": {
     "build": "bem make",
+    "test": "karma start --single-run",
+    "dev": "karma start",
     "deps": "bower-npm-install --non-interactive"
   }
 }
