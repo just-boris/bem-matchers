@@ -4,8 +4,6 @@
 
 var PATH = require('path');
 
-require('bem-tools-autoprefixer').extendMake(MAKE);
-
 MAKE.decl('Arch', {
 
     blocksLevelsRegexp : /^.+?\.blocks/,
@@ -24,7 +22,6 @@ MAKE.decl('BundleNode', {
             'deps.js',
             'bemhtml',
             'browser.js+bemhtml',
-            'stylus',
             'css',
             'html'
         ];
@@ -32,7 +29,7 @@ MAKE.decl('BundleNode', {
     },
 
     getForkedTechs : function() {
-        return this.__base().concat(['browser.js+bemhtml', 'stylus']);
+        return this.__base().concat(['browser.js+bemhtml']);
     },
 
     getLevelsMap : function() {
@@ -58,25 +55,6 @@ MAKE.decl('BundleNode', {
         return levels
             .map(function(path) { return resolve(path); })
             .concat(resolve(PATH.dirname(this.getNodePrefix()), 'blocks'));
-    },
-
-    'create-css-node' : function(tech, bundleNode, magicNode) {
-        var source = this.getBundlePath('stylus');
-        if(this.ctx.arch.hasNode(source)) {
-            return this.createAutoprefixerNode(tech, this.ctx.arch.getNode(source), bundleNode, magicNode);
-        }
-    }
-
-});
-
-MAKE.decl('AutoprefixerNode', {
-
-    getBrowsers : function() {
-        return [
-            'last 2 versions',
-            'ie 10',
-            'opera 12.16'
-        ];
     }
 
 });
