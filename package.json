@@ -22,6 +22,7 @@
     "enb": "^0.13.7",
     "enb-autoprefixer": "^0.1.1",
     "enb-bem": "0.1.0-beta2",
+    "enb-bembundle": "^1.0.2",
     "enb-bemxjst": "^1.3.2",
     "enb-borschik": "^1.1.1",
     "enb-diverse-js": "^0.1.0",
