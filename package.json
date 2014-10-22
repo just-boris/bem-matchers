@@ -36,6 +36,7 @@
     "ym": "^0.1.0"
   },
   "scripts": {
+    "postinstall": "bower-npm-install",
     "build": "bem make",
     "test": "karma start --single-run",
     "dev": "karma start",
