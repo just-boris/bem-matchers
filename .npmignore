@@ -1,0 +1,9 @@
+.idea
+test
+bower.json
+karma.conf.js
+.travis.yml
+.bowerrc
+.editorconfig
+.gitignore
+.jshintrc

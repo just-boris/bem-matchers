@@ -6,6 +6,12 @@
     "type": "git",
     "url": "git://github.com/just-boris/bem-matchers.git"
   },
+  "keywords": [
+    "jasmine",
+    "matcher",
+    "bem"
+  ],
+  "main": "src/toHaveMod.js",
   "engines": {
     "node": ">=0.10"
   },

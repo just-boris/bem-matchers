@@ -1,3 +1,5 @@
+/*jshint jasmine: true*/
+/*global modules*/
 describe("toHaveMod", function() {
     "use strict";
     var block;
@@ -14,23 +16,32 @@ describe("toHaveMod", function() {
         });
     });
 
-    it("should check mod", function () {
-        block.setMod('tested', 'ok');
+    describe("check mod value", function () {
+        it("should check", function () {
+            block.setMod('tested', 'ok');
 
-        expect(block).toHaveMod('tested', 'ok');
-        expect(block).not.toHaveMod('buggy', true);
+            expect(block).toHaveMod('tested', 'ok');
+            expect(block).not.toHaveMod('buggy', true);
+        });
+
+        it("should detect when mod is defined but with wrong value", function () {
+            block.setMod('tested', 'ok');
+
+            expect(block).not.toHaveMod('tested', 'false');
+        });
+
+        it("should throw exception when passed argument is not BEM-enitiy", function () {
+            var notBlock = {};
+            expect(function() {
+                expect(notBlock).toHaveMod('tested', 'ok');
+            }).toThrow();
+        });
     });
 
-    it("should detect when mod is defined but with wrong value", function () {
+    it("should check  mod existence ignore value", function () {
         block.setMod('tested', 'ok');
 
-        expect(block).not.toHaveMod('tested', 'false');
-    });
-
-    it("should throw exception when passed argument is not BEM-enitiy", function () {
-        var notBlock = {};
-        expect(function() {
-            expect(notBlock).toHaveMod('tested', 'ok');
-        }).toThrow();
+        expect(block).toHaveMod('tested');
+        expect(block).not.toHaveMod('buggy');
     });
 });
