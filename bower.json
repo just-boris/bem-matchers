@@ -6,6 +6,7 @@
     "node_modules",
     "libs"
   ],
+  "main": "src/toHaveMod.js",
   "dependencies": {
     "jasmine": "^2.0.0"
   },
