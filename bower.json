@@ -7,6 +7,9 @@
     "libs"
   ],
   "dependencies": {
+    "jasmine": "^2.0.0"
+  },
+  "devDependencies": {
     "bem-core": "v2.3.0"
   }
 }
